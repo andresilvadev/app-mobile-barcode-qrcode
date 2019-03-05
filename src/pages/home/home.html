@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="main">
+    <ion-title>
+      Scan BarCode e QRCode
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-input class="entrada-texto" type="text" [(ngModel)]="encodeText"></ion-input>
+    <button color="main" ion-button block (click)="encode()" text-uppercase> Criar Código - Encode </button>
+  </div>
+
+  <div>
+    <button color="secondary" ion-button block (click)="scan()" text-uppercase> Ler Código - Decode </button> <br>
+    <div text-center *ngIf="scannedData.text">
+      <label class="mostra-code">
+        Seu código de barras é :
+      </label>
+      <h1>{{scannedData.text}}</h1>
+    </div>
+  </div>
+</ion-content>
